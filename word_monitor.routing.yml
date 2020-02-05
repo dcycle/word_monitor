@@ -1,0 +1,7 @@
+---
+word_monitor.settings:
+  path: '/admin/content/words'
+  defaults:
+    _form: '\Drupal\word_monitor\Form\AdminForm'
+  requirements:
+    _permission: 'administer site configuration'

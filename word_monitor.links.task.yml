@@ -1,0 +1,5 @@
+---
+word_monitor.word_monitor_task:
+  route_name: word_monitor.settings
+  base_route: system.admin_content
+  title: 'Words to monitor'

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Runtime hooks.
+ */
+
+use Drupal\word_monitor_search\WordMonitorSearch;
+
+/**
+ * Quick access to the word_monitor_search service, useful for debugging.
+ *
+ * @return \Drupal\word_monitor_search\WordMonitorSearch
+ *   The WordMonitor service.
+ */
+function word_monitor_search() : WordMonitorSearch {
+  return \Drupal::service('word_monitor_search');
+}

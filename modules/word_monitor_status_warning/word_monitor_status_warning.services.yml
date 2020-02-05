@@ -1,0 +1,6 @@
+---
+services:
+  word_monitor_status_warning:
+    class: Drupal\word_monitor_status_warning\WordMonitorStatusWarning
+    arguments:
+      - '@word_monitor'

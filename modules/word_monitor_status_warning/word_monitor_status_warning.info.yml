@@ -1,0 +1,11 @@
+---
+name: Word Monitor Status Warning
+type: module
+description: >
+  Provides warning on /admin/reports/status page in case a banned word is
+  present.
+core: '8.x'
+core_version_requirement: ^8 || ^9
+php: '7.x'
+dependencies:
+  - word_monitor:word_monitor

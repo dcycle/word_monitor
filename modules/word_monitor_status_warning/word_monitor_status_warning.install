@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install hooks.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function word_monitor_status_warning_requirements(string $phase) : array {
+  // Make sure the phase is runtime, otherwise (during installation for
+  // example) the word_monitor service will not be available.
+  if ($phase != 'runtime') {
+    // If ther are any non-runtime requirements, we do not have access
+    // to the word_monitor_status_warning service, so we would define them here.
+    // (There are none at the time of this writing.)
+    return [];
+  }
+  return \Drupal::service('word_monitor_status_warning')->hookRequirements($phase);
+}

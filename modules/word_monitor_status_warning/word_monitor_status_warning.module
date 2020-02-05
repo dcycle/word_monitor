@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Runtime hooks.
+ */
+
+use Drupal\word_monitor_status_warning\WordMonitorStatusWarning;
+
+/**
+ * Quick access to the word_monitor_status_warning service, for debugging.
+ *
+ * @return \Drupal\word_monitor_status_warning\WordMonitorStatusWarning
+ *   The word_monitor_status_warning service.
+ */
+function word_monitor_status_warning() : WordMonitorStatusWarning {
+  return \Drupal::service('word_monitor_status_warning');
+}

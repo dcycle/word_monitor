@@ -1,0 +1,15 @@
+---
+services:
+  word_monitor_search_plugin_collection:
+    class: Drupal\word_monitor_search\WordMonitorSearchPluginCollection
+  word_monitor_search:
+    class: Drupal\word_monitor_search\WordMonitorSearch
+    arguments:
+      - '@renderer'
+      - '@cache_tags.invalidator'
+      - '@system.manager'
+      - '@state'
+      - '@word_monitor_search_plugin_collection'
+  plugin.manager.word_monitor_search:
+    class: Drupal\word_monitor_search\WordMonitorSearchPluginManager
+    parent: default_plugin_manager

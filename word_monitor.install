@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install hooks.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function word_monitor_uninstall() {
+  \Drupal::state()->delete('word_monitor_token');
+}

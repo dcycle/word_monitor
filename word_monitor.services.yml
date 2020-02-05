@@ -1,0 +1,12 @@
+---
+services:
+  word_monitor_plugin_collection:
+    class: Drupal\word_monitor\WordMonitorPluginCollection
+  word_monitor:
+    class: Drupal\word_monitor\WordMonitor
+    arguments:
+      - '@state'
+      - '@word_monitor_plugin_collection'
+  plugin.manager.word_monitor:
+    class: Drupal\word_monitor\WordMonitorPluginManager
+    parent: default_plugin_manager
