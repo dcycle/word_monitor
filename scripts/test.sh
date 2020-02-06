@@ -8,6 +8,7 @@ echo '=> Linting code.'
 ./scripts/shell-lint.sh
 ./scripts/yaml-lint.sh
 ./scripts/php-lint.sh
+./scripts/markdown-lint.sh
 
 echo '=> Static analysis.'
 ./scripts/php-drupal9.sh
