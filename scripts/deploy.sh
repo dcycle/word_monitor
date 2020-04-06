@@ -28,10 +28,9 @@ fi
 echo ''
 echo '-----'
 echo 'Running the deploy scripts on the container.'
-# See https://github.com/docker/compose/issues/5696; useful for
-# ./scripts/jenkins/test.sh.
-export COMPOSE_INTERACTIVE_NO_CLI=1
-docker-compose exec drupal /bin/bash -c 'cd ./modules/custom/word_monitor/scripts/lib/docker-resources && ./deploy.sh'
+# See https://github.com/docker/compose/issues/3352#issuecomment-221526576;
+# useful for ./scripts/jenkins/test.sh.
+docker-compose exec -T drupal /bin/bash -c 'cd ./modules/custom/word_monitor/scripts/lib/docker-resources && ./deploy.sh'
 
 echo ''
 echo '-----'
