@@ -19,6 +19,6 @@ IP=$(ssh "$DOCKERHOSTUSER@$DOCKERHOST" \
   "./digitalocean/scripts/new-droplet.sh word-monitor")
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
   root@"$IP" \
-  "git clone http://github.com/dcycle/word_monitor && \
+  "git clone --single-branch --branch working http://github.com/dcycle/word_monitor && \
   cd word_monitor && \
   ./scripts/ci.sh"
