@@ -5,4 +5,4 @@
 set -e
 
 echo 'Run some self-tests'
-docker-compose exec drupal /bin/bash -c 'drush ev "word_monitor()->selfTest();"'
+docker-compose exec -T drupal /bin/bash -c 'drush ev "word_monitor()->selfTest();"'
