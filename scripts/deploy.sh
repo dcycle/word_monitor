@@ -28,9 +28,10 @@ fi
 echo ''
 echo '-----'
 echo 'Running the deploy scripts on the container.'
-# Piping avoids the "not a tty" error in ./scripts/jenkins/test.sh.
-# See https://stackoverflow.com/a/43099210/1207752.
-echo 'cd ./modules/custom/word_monitor/scripts/lib/docker-resources && ./deploy.sh' | docker-compose exec drupal /bin/bash -c
+# See https://github.com/docker/compose/issues/5696; useful for
+# ./scripts/jenkins/test.sh.
+export COMPOSE_INTERACTIVE_NO_CLI=1
+docker-compose exec drupal /bin/bash -c 'cd ./modules/custom/word_monitor/scripts/lib/docker-resources && ./deploy.sh'
 
 echo ''
 echo '-----'
