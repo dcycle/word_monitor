@@ -15,9 +15,8 @@
 spl_autoload_register(function ($class) {
   $custom_code = [
     'word_monitor' => '.',
-    'word_monitor_ignore' => 'modules/word_monitor_ignore',
     'word_monitor_search' => 'modules/word_monitor_search',
-    'word_monitor_severity' => 'modules/word_monitor_severity',
+    'word_monitor_status_warning' => 'modules/word_monitor_status_warning',
   ];
 
   require_once 'phpunit-bootstrap.php';

@@ -5,6 +5,7 @@
     <testsuite name="myproject">
       <directory>./tests/src/Unit</directory>
       <directory>./modules/word_monitor_search/tests/src/Unit</directory>
+      <directory>./modules/word_monitor_status_warning/tests/src/Unit</directory>
     </testsuite>
   </testsuites>
 </phpunit>

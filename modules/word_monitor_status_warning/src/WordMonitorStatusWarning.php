@@ -32,6 +32,30 @@ class WordMonitorStatusWarning {
   }
 
   /**
+   * Given an array of errors and other info, provide Drupal requirements array.
+   *
+   * @param array $errors
+   *   An array of errors.
+   * @param mixed $project_link
+   *   A rendere project link.
+   * @param mixed $warning
+   *   A value of "severity" in case of a warning.
+   * @param mixed $ok
+   *   A value of "severity" in case there are no errors.
+   */
+  public function countToRequirementsArray(array $errors, $project_link, $warning, $ok) : array {
+    $count = count($errors);
+    return [
+      'title' => $this->t('Monitor for banned words on your site'),
+      'value' => $this->t('@c banned words found', ['@c' => $count]),
+      'description' => $this->t('You can define banned words and see where they are on the site at @l', [
+        '@l' => $project_link,
+      ]),
+      'severity' => $count ? $warning : $ok,
+    ];
+  }
+
+  /**
    * Testable implementation of hook_requirements().
    */
   public function hookRequirements(string $phase) : array {
@@ -41,16 +65,9 @@ class WordMonitorStatusWarning {
     $project_link = Link::fromTextAndUrl($this->t('the project settings page'), $url);
     $project_link = $project_link->toRenderable();
 
-    $count = $this->wordMonitor->findAll();
+    $errors = $this->wordMonitor->findAll();
     if ($phase == 'runtime') {
-      $return['word_monitor_status_warning'] = [
-        'title' => $this->t('Monitor for banned words on your site'),
-        'value' => $count,
-        'description' => $this->t('You can define banned words and see where they are on the site at @l', [
-          '@l' => render($project_link),
-        ]),
-        'severity' => $count ? REQUIREMENT_WARNING : REQUIREMENT_OK,
-      ];
+      $return['word_monitor_status_warning'] = $this->countToRequirementsArray($errors, render($project_link), REQUIREMENT_WARNING, REQUIREMENT_OK);
     }
 
     return $return;
