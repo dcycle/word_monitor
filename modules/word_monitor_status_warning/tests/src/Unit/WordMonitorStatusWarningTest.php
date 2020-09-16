@@ -63,7 +63,10 @@ class WordMonitorStatusWarningTest extends TestCase {
         'expected' => [
           'title' => serialize(['Monitor for banned words on your site', []]),
           'value' => serialize(['@c banned words found', ['@c' => 0]]),
-          'description' => serialize(['You can define banned words and see where they are on the site at @l', ['@l' => 'some project link']]),
+          'description' => serialize([
+            'You can define banned words and see where they are on the site at @l',
+            ['@l' => 'some project link'],
+          ]),
           'severity' => 'ok',
         ],
       ],
@@ -75,7 +78,10 @@ class WordMonitorStatusWarningTest extends TestCase {
         'expected' => [
           'title' => serialize(['Monitor for banned words on your site', []]),
           'value' => serialize(['@c banned words found', ['@c' => 1]]),
-          'description' => serialize(['You can define banned words and see where they are on the site at @l', ['@l' => 'some project link']]),
+          'description' => serialize([
+            'You can define banned words and see where they are on the site at @l',
+            ['@l' => 'some project link'],
+          ]),
           'severity' => 'warning',
         ],
       ],
@@ -91,7 +97,10 @@ class WordMonitorStatusWarningTest extends TestCase {
         'expected' => [
           'title' => serialize(['Monitor for banned words on your site', []]),
           'value' => serialize(['@c banned words found', ['@c' => 5]]),
-          'description' => serialize(['You can define banned words and see where they are on the site at @l', ['@l' => 'some project link']]),
+          'description' => serialize([
+            'You can define banned words and see where they are on the site at @l',
+            ['@l' => 'some project link'],
+          ]),
           'severity' => 'warning',
         ],
       ],
