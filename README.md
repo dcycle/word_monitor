@@ -73,7 +73,4 @@ To run automated tests locally, install Docker and type:
 Drupal 9 readiness
 -----
 
-This module is usable, and tested on CircleCI, with Drupal 9. We check for
-deprecated code using a
-[dockerized version](https://github.com/dcycle/docker-drupal-check) of
-[Drupal Check](https://github.com/dcycle/docker-drupal-check).
+This module is Drupal 9-compatible.
