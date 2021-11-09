@@ -1,4 +1,4 @@
-FROM dcycle/drupal:9
+FROM dcycle/drupal:9php8
 
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/php.ini && \
   echo 'opcache.enable=0' >> /usr/local/etc/php/php.ini

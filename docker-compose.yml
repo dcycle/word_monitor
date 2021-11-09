@@ -7,7 +7,7 @@ services:
   drupal:
     build:
       context: .
-      dockerfile: DevelopmentDockerfile8
+      dockerfile: DevelopmentDockerfile9
     volumes:
       - ".:/var/www/html/modules/custom/word_monitor"
     ports:
@@ -17,7 +17,7 @@ services:
     working_dir: /var/www/html
 
   mysql:
-    image: mysql:5
+    image: mariadb
     environment:
       MYSQL_DATABASE: drupal
       MYSQL_ROOT_PASSWORD: drupal

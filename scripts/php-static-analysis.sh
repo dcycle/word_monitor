@@ -10,6 +10,7 @@ echo ''
 echo '// @phpstan:ignoreError'
 docker run --rm \
   -v "$(pwd)":/var/www/html/modules/custom/word_monitor \
-  dcycle/phpstan-drupal:1 \
+  dcycle/phpstan-drupal:4 \
   -c /var/www/html/modules/custom/word_monitor/scripts/lib/phpstan/phpstan.neon \
-  /var/www/html/modules/custom
+  /var/www/html/modules/custom \
+  --memory-limit=-1
