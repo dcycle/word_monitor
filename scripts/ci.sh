@@ -10,9 +10,6 @@ echo '=> Run fast tests.'
 echo '=> Deploy a Drupal 9 environment.'
 ./scripts/deploy.sh
 
-echo '=> Drupal PHPUnit tests on required Drupal 9 environment.'
-./scripts/php-unit-drupal.sh
-
 echo '=> Tests on Drupal 9 environment.'
 ./scripts/test-running-environment.sh
 
