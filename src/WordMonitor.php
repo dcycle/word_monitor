@@ -119,9 +119,10 @@ class WordMonitor {
   }
 
   /**
-   * Get the renderer.
+   * Get the renderer service.
    *
    * @return \Drupal\Core\Render\RendererInterface
+   *   The renderer service.
    */
   public function renderer() : RendererInterface {
     return $this->renderer;
