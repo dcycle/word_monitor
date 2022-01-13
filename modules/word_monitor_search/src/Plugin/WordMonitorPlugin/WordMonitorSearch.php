@@ -91,7 +91,7 @@ class WordMonitorSearch extends WordMonitorPluginBase {
     // this is widely used in Drupal, for example in
     // ./core/lib/Drupal/Core/Entity/Controller/EntityController.php.
     // Declaring the class final would make it unmockable.
-    // @phpstan:ignoreError
+    // @phpstan-ignore-next-line
     return new static($entity_type_manager, $search_page_repository, $word_monitor_search, $configuration, $plugin_id, $plugin_definition);
   }
 
@@ -116,7 +116,7 @@ class WordMonitorSearch extends WordMonitorPluginBase {
   protected function index() {
     foreach ($this->searchPageRepository->getIndexableSearchPages() as $entity) {
       // See https://www.drupal.org/project/drupal/issues/3111190.
-      // @phpstan:ignoreError
+      // @phpstan-ignore-next-line
       $entity->getPlugin()->updateIndex();
     }
   }
