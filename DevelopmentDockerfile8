@@ -1,3 +1,0 @@
-FROM dcycle/drupal:8drush
-
-RUN echo 'opcache.enable=0' >> /usr/local/etc/php/php.ini

@@ -70,7 +70,7 @@ abstract class WordMonitorPluginBase extends PluginBase implements WordMonitorPl
     // this is widely used in Drupal, for example in
     // ./core/lib/Drupal/Core/Entity/Controller/EntityController.php.
     // Declaring the class final would make it unmockable.
-    // @phpstan:ignoreError
+    // @phpstan-ignore-next-line
     return new static($entity_type_manager, $configuration, $plugin_id, $plugin_definition);
   }
 

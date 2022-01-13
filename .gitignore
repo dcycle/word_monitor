@@ -2,3 +2,4 @@
 # README.html is generated from .md, ignore it.
 README.html
 do-not-commit
+.phpunit.result.cache

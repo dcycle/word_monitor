@@ -32,7 +32,7 @@ class WordMonitorPluginCollection implements WordMonitorPluginInterface {
     // tests is to mock the entire ::pluginManager() method, so our code
     // ends up testable even if we don't have dependency injection.
     // @codingStandardsIgnoreStart
-    // @phpstan:ignoreError
+    // @phpstan-ignore-next-line
     return \Drupal::service('plugin.manager.word_monitor');
     // @codingStandardsIgnoreEnd
   }

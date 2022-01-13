@@ -11,7 +11,6 @@ echo '=> Linting code.'
 ./scripts/markdown-lint.sh
 
 echo '=> Static analysis.'
-./scripts/php-drupal9.sh
 ./scripts/php-static-analysis.sh
 
 echo '=> Unit tests.'

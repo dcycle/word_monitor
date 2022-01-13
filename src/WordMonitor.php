@@ -2,6 +2,7 @@
 
 namespace Drupal\word_monitor;
 
+use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\State\State;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
@@ -27,16 +28,26 @@ class WordMonitor {
   protected $plugins;
 
   /**
+   * The renderer.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
+
+  /**
    * Constructs a new WordMonitor object.
    *
    * @param \Drupal\Core\State\State $state
    *   An injected state service.
    * @param \Drupal\word_monitor\WordMonitorPluginCollection $plugins
    *   An injected collection of plugins.
+   * @param \Drupal\Core\Render\RendererInterface $renderer
+   *   A renderer service.
    */
-  public function __construct(State $state, WordMonitorPluginCollection $plugins) {
+  public function __construct(State $state, WordMonitorPluginCollection $plugins, RendererInterface $renderer) {
     $this->state = $state;
     $this->plugins = $plugins;
+    $this->renderer = $renderer;
   }
 
   /**
@@ -105,6 +116,16 @@ class WordMonitor {
    */
   public function plugins() : WordMonitorPluginCollection {
     return $this->plugins;
+  }
+
+  /**
+   * Get the renderer service.
+   *
+   * @return \Drupal\Core\Render\RendererInterface
+   *   The renderer service.
+   */
+  public function renderer() : RendererInterface {
+    return $this->renderer;
   }
 
   /**
