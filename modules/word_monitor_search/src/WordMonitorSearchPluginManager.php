@@ -44,7 +44,6 @@ class WordMonitorSearchPluginManager extends DefaultPluginManager {
    */
   // See https://github.com/mglaman/phpstan-drupal/issues/112
   // @codingStandardsIgnoreStart
-  // @phpstan-ignore-next-line
   public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler) {
   // @codingStandardsIgnoreEnd
     // We replace the $subdir parameter with our own value.

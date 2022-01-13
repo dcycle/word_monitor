@@ -67,7 +67,7 @@ class WordMonitorStatusWarning {
 
     $errors = $this->wordMonitor->findAll();
     if ($phase == 'runtime') {
-      $return['word_monitor_status_warning'] = $this->countToRequirementsArray($errors, this->wordMonitor->renderer()->render($project_link), REQUIREMENT_WARNING, REQUIREMENT_OK);
+      $return['word_monitor_status_warning'] = $this->countToRequirementsArray($errors, $this->wordMonitor->renderer()->render($project_link), REQUIREMENT_WARNING, REQUIREMENT_OK);
     }
 
     return $return;

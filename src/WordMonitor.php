@@ -41,7 +41,8 @@ class WordMonitor {
    *   An injected state service.
    * @param \Drupal\word_monitor\WordMonitorPluginCollection $plugins
    *   An injected collection of plugins.
-   * @param \Drupal\Core\Render\RendererInterface
+   * @param \Drupal\Core\Render\RendererInterface $renderer
+   *   A renderer service.
    */
   public function __construct(State $state, WordMonitorPluginCollection $plugins, RendererInterface $renderer) {
     $this->state = $state;
