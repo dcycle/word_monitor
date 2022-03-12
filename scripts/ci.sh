@@ -18,3 +18,7 @@ echo '=> Browser tests on Drupal 9 environment.'
 
 echo '=> Destroy the Drupal 9 environment.'
 ./scripts/destroy.sh
+
+echo '=>'
+echo '=> Done all continuous integration tests for word_monitor!'
+echo '=>'
