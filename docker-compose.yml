@@ -19,9 +19,7 @@ services:
   mysql:
     image: mariadb
     environment:
-      MYSQL_DATABASE: drupal
-      MYSQL_ROOT_PASSWORD: drupal
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MARIADB_ROOT_PASSWORD: drupal
 
 # Specifying the network name makes it predictable on all environments,
 # for example when we run browser tests.
