@@ -19,5 +19,5 @@ do
   fi
 done
 
-drush si -y --db-url "mysqli://root:drupal@mysql/drupal" standard
+drush si -y --db-url "mysql://root:drupal@mysql/drupal" standard
 drush en -y word_monitor word_monitor_search
