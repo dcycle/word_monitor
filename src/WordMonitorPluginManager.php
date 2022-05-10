@@ -27,7 +27,6 @@ use Drupal\word_monitor\Annotation\WordMonitorPluginAnnotation;
  */
 // See https://github.com/mglaman/phpstan-drupal/issues/113
 // @codingStandardsIgnoreStart
-// @phpstan-ignore-next-line
 class WordMonitorPluginManager extends DefaultPluginManager {
 // @codingStandardsIgnoreEnd
 
