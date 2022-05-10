@@ -27,7 +27,6 @@ use Drupal\word_monitor_search\Annotation\WordMonitorSearchPluginAnnotation;
  */
 // See https://github.com/mglaman/phpstan-drupal/issues/113
 // @codingStandardsIgnoreStart
-// @phpstan-ignore-next-line
 class WordMonitorSearchPluginManager extends DefaultPluginManager {
 // @codingStandardsIgnoreEnd
 
