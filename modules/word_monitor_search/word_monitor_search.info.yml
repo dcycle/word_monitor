@@ -2,9 +2,8 @@
 name: Word Monitor Search
 type: module
 description: Use the core search module to integrate with Word Monitor.
-core: '8.x'
 core_version_requirement: ^8 || ^9
-php: '7.x'
+php: '8.x'
 dependencies:
   - word_monitor:word_monitor
   - search
