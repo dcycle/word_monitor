@@ -13,6 +13,10 @@ use Drupal\word_monitor_search\WordMonitorSearch;
  * @return \Drupal\word_monitor_search\WordMonitorSearch
  *   The WordMonitor service.
  */
+// @codingStandardsIgnoreStart
+// PHP Lint wants this to be prefixed with the module name, but it _is_
+// the same as the module name, so I consider this ok.
 function word_monitor_search() : WordMonitorSearch {
+// @codingStandardsIgnoreEnd
   return \Drupal::service('word_monitor_search');
 }
