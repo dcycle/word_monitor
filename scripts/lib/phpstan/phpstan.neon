@@ -2,7 +2,7 @@
 parameters:
   excludePaths:
     - */tests/*
-    - */multiaccess/phpunit-autoload.php
-    - */multiaccess/phpunit-bootstrap.php
+    - */word_monitor/phpunit-autoload.php
+    - */word_monitor/phpunit-bootstrap.php
 includes:
   - /var/www/html/phpstan.neon
