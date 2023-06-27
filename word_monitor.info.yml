@@ -2,6 +2,6 @@
 name: Word Monitor
 type: module
 description: Define which words should not appear in your content.
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 configure: word_monitor.settings
 php: '8.x'

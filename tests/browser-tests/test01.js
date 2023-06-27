@@ -29,7 +29,7 @@ it('It should be possible to log in configure the module', async function() {
     console.log('set viewport')
     await page.setViewport({ width: 1280, height: 800 })
     console.log('go to the login page')
-    await page.goto('http://drupal/user')
+    await page.goto('http://webserver/user')
     console.log('enter credentials')
     await page.type('[name=name]', process.env.DRUPALUSER)
     await page.type('[name=pass]', process.env.DRUPALPASS)
@@ -37,7 +37,7 @@ it('It should be possible to log in configure the module', async function() {
     await page.waitForSelector('body.user-logged-in')
 
     console.log('go to /admin/modules')
-    await page.goto('http://drupal/admin/modules')
+    await page.goto('http://webserver/admin/modules')
 
     await page.waitForSelector('[aria-controls=edit-modules-word-monitor-enable-description]');
     await page.click('[aria-controls=edit-modules-word-monitor-enable-description]');
