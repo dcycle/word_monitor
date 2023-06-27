@@ -1,10 +1,13 @@
 #!/bin/bash
 #
 # Deploy a development or testing environment.
-# If this is passed with the argument "9", then Drupal 9 is used. Otherwise
-# Drupal 8 is used.
 #
 set -e
+
+if [ "$1" != "9" ] && [ "$1" != "10" ]; then
+  >&2 echo "Please specify 9 or 10"
+  exit 1;
+fi
 
 echo ''
 echo '-----'
@@ -19,17 +22,11 @@ echo '-----'
 echo 'About to start persistent (-d) containers based on the images defined'
 echo 'in ./Dockerfile-* files. We are also telling docker-compose to'
 echo 'rebuild the images if they are out of date.'
-if [ "$1" == 9 ]; then
-  docker-compose -f docker-compose.yml -f docker-compose.drupal9.yml up -d --build
-else
-  docker-compose up -d --build
-fi
+docker-compose -f docker-compose.yml -f docker-compose."$1".yml up -d --build
 
 echo ''
 echo '-----'
 echo 'Running the deploy scripts on the container.'
-# See https://github.com/docker/compose/issues/3352#issuecomment-221526576;
-# useful for ./scripts/jenkins/test.sh.
 docker-compose exec -T drupal /bin/bash -c 'cd ./modules/custom/word_monitor/scripts/lib/docker-resources && ./deploy.sh'
 
 echo ''
